@@ -318,7 +318,7 @@ impl DfuIo for MockIO {
             (Request::DFU_GETSTATUS, State::DfuManifestSync) => {
                 if !self.functional_descriptor.manifestation_tolerant {
                     self.update_state(State::DfuManifestWaitReset);
-                    self.status_request(buffer, State::DfuManifest)
+                    self.status_request(buffer, State::DfuManifestWaitReset)
                 } else if self.still_busy() {
                     self.status_request(buffer, State::DfuManifest)
                 } else {

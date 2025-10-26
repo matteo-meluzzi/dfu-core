@@ -284,7 +284,7 @@ impl<'dfu> DownloadChunk<'dfu> {
             if self.descriptor.manifestation_tolerant {
                 (State::DfuManifest, State::DfuIdle)
             } else {
-                (State::DfuManifest, State::DfuManifest)
+                (State::DfuManifest, State::DfuManifestWaitReset)
             }
         } else {
             (State::DfuDnbusy, State::DfuDnloadIdle)
