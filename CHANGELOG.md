@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## v0.9.1
+
+- Update CHANGELOG.md
+
+## v0.9.0
+
+- Allow block_num to wrap per DFU spec 6.1.1 (#30)
+
 ## v0.8.0
 
 - `std::thread::sleep` should not be used in `async` context (#28)
