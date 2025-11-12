@@ -301,10 +301,7 @@ impl<'dfu> DownloadChunk<'dfu> {
                     .checked_add(len)
                     .ok_or(Error::MaximumTransferSizeExceeded)?,
                 protocol: self.protocol,
-                block_num: self
-                    .block_num
-                    .checked_add(1)
-                    .ok_or(Error::MaximumChunksExceeded)?,
+                block_num: self.block_num.wrapping_add(1),
                 eof: bytes.is_empty(),
             },
         );
